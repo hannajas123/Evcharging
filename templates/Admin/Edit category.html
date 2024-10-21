@@ -1,0 +1,20 @@
+{% extends 'Adminindexhome.html' %}
+{% block body %}
+<body>
+<form action="/Evapp/edit_cate_post/"method="post">
+    {% csrf_token %}
+    <table class="table table-bordered">
+                <input type="hidden"value="{{ data.id }}"name="did">
+
+        <tr>
+            <th>Category Name:</th>
+        <td><input type="text"name="cname"value="{{ data.categoryname }}"class="form-control"pattern="[A-Za-z]+" required></td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan="2"><input type="submit"value="Update" class="btn btn-info"></td>
+        </tr>
+    </table>
+</form>
+</body>
+{% endblock %}
